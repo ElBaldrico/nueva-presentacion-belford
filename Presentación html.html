@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BELFORD® - Presentación</title>
+    <link rel="stylesheet" type="text/css" href="animaciones presentacion.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="presentationCarousel" class="carousel">
+        <div class="carousel-inner">
+            <!-- Diapositiva 1 -->
+            <div class="carousel-item active">
+                <div>
+                    <h1>BELFORD®</h1>
+                    <h2>Baldric Elguera</h2>
+                </div>
+            </div>
+            <!-- Diapositiva 2 -->
+            <div class="carousel-item">
+                <div>
+                    <h1>¿De qué trata este proyecto?</h1>
+                    <h2>
+                        BELFORD® es una plataforma diseñada para ofrecer moda de alta calidad. Aquí encontrarás información
+                        sobre nuestra marca, productos exclusivos y opciones de compra accesibles.
+                    </h2>
+                </div>
+            </div>
+            <!-- Diapositiva 3 -->
+            <div class="carousel-item">
+                <div>
+                    <h1>Wireframe de la página</h1>
+                    <h2>
+                        Estructura visual del sitio web, mostrando las secciones principales: barra de navegación, inicio, productos, galería y formulario de contacto.
+                    </h2>
+                    <img src="imagenes/Captura de pantalla 2024-11-20 092043.png" alt="Wireframe del sitio" class="wireframe-image">
+                </div>
+            </div>
+            <!-- Diapositiva 4 -->
+            <div class="carousel-item">
+                <div>
+                    <h1>Barra de Navegación</h1>
+                    <h2>
+                        Explora las secciones clave del sitio a través de nuestra barra de navegación. 
+                        Cada sección está diseñada para ser intuitiva y funcional.
+                    </h2>
+                    <a href="https://elbaldrico.github.io/Belford-company.com/Acerca%20de.html" class="btn">Ir a la Página</a>
+                </div>
+            </div>
+            <!-- Diapositiva 5 -->
+            <div class="carousel-item">
+                <div>
+                    <h1>Gracias</h1>
+                    <h2>Gracias por visitar BELFORD®. ¡Esperamos verte pronto!</h2>
+                </div>
+            </div>
+        </div>
+        <!-- Controles del carrusel -->
+        <button class="carousel-control-prev" onclick="prevSlide()">&#10094;</button>
+        <button class="carousel-control-next" onclick="nextSlide()">&#10095;</button>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const items = document.querySelectorAll('.carousel-item');
+
+        function updateCarousel() {
+            const carouselInner = document.querySelector('.carousel-inner');
+            carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : items.length - 1;
+            updateCarousel();
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex < items.length - 1) ? currentIndex + 1 : 0;
+            updateCarousel();
+        }
+    </script>
+</body>
+</html>
